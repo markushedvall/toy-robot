@@ -1,5 +1,7 @@
+#include <robot/hello.h>
+
 #include <iostream>
 
 int main() {
-  std::cout << "Hello World!" << std::endl;
+  std::cout << robot::say_hello() << std::endl;
 }
