@@ -1,0 +1,23 @@
+Checks: '-*,
+bugprone-*,
+clang-analyzer-*,
+cppcoreguidelines-*,
+-cppcoreguidelines-pro-bounds-pointer-arithmetic,
+google-*,
+-google-runtime-references,
+-google-readability-todo,
+hicpp-*,
+-hicpp-named-parameter,
+llvm-include-order,
+llvm-namespace-comment,
+misc-*,
+modernize-*,
+-modernize-use-trailing-return-type,
+performance-*,
+readability-*,
+-readability-named-parameter,
+'
+HeaderFilterRegex: '.*/robot.*'
+AnalyzeTemporaryDtors: false
+FormatStyle: file
+CheckOptions:
