@@ -5,8 +5,6 @@ add_executable(robot-test
 
 target_include_directories(robot-test PRIVATE "${PROJECT_SOURCE_DIR}/src")
 
-target_compile_features(robot-test PRIVATE cxx_std_17)
-
 include(FetchContent)
 FetchContent_Declare(
   Catch2
@@ -15,7 +13,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Catch2)
 
-target_link_libraries(robot-test PRIVATE Catch2::Catch2)
+target_link_libraries(robot-test PRIVATE Catch2::Catch2 options warnings)
 
 list(APPEND CMAKE_MODULE_PATH "${catch2_SOURCE_DIR}/contrib")
 include(Catch)
