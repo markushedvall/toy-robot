@@ -14,7 +14,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Catch2)
 
-target_link_libraries(robot-test PRIVATE Catch2::Catch2 options warnings)
+target_link_libraries(robot-test PRIVATE Catch2::Catch2 options warnings cov)
 
 # if(COVERAGE)
 #   target_compile_options(robot-test PRIVATE --coverage)

@@ -13,9 +13,11 @@ target_include_directories(robot PRIVATE "${PROJECT_SOURCE_DIR}/src")
 
 add_library(options INTERFACE)
 target_compile_features(options INTERFACE cxx_std_17)
+
+add_library(cov INTERFACE)
 if(COVERAGE)
-  target_compile_options(options INTERFACE --coverage -O0 -g)
-  target_link_options(options INTERFACE --coverage)
+  target_compile_options(cov INTERFACE --coverage -O0 -g)
+  target_link_options(cov INTERFACE --coverage)
 endif()
 
 add_library(warnings INTERFACE)
