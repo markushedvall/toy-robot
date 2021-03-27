@@ -5,9 +5,7 @@
 
 namespace robot {
 
-std::string_view say_hello() {
-  return "Hello World!";
-}
+std::string_view say_hello();
 
 } // namespace robot
 

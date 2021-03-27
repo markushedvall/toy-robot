@@ -1,5 +1,6 @@
 add_executable(robot-test
   main.cpp
+  "${PROJECT_SOURCE_DIR}/src/robot/hello.cpp"
   "${PROJECT_SOURCE_DIR}/src/robot/hello.test.cpp"
 )
 

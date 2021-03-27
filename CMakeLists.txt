@@ -5,7 +5,10 @@ option(WERROR "All warnings will be treated as errors" OFF)
 option(LINT "Lint the code with clang-tidy" OFF)
 option(COVERAGE "Build with coverage" OFF)
 
-add_executable(robot src/robot/main.cpp)
+add_executable(robot
+  src/robot/main.cpp
+  src/robot/hello.cpp
+)
 target_include_directories(robot PRIVATE "${PROJECT_SOURCE_DIR}/src")
 
 add_library(options INTERFACE)
