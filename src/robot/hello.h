@@ -5,7 +5,7 @@
 
 namespace robot {
 
-constexpr std::string_view say_hello() {
+std::string_view say_hello() {
   return "Hello World!";
 }
 
