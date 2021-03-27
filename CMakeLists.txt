@@ -33,7 +33,7 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL MSVC)
   endif()
 endif()
 
-target_link_libraries(robot PRIVATE options warnings)
+target_link_libraries(robot PRIVATE options warnings cov)
 
 if(LINT)
   find_program(CLANG_TIDY clang-tidy REQUIRED)
