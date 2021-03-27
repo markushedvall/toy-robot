@@ -13,10 +13,6 @@ target_include_directories(robot PRIVATE "${PROJECT_SOURCE_DIR}/src")
 
 add_library(options INTERFACE)
 target_compile_features(options INTERFACE cxx_std_17)
-if(COVERAGE)
-  target_compile_options(options INTERFACE --coverage)
-  target_link_options(options INTERFACE --coverage)
-endif()
 
 add_library(warnings INTERFACE)
 if(CMAKE_CXX_COMPILER_ID MATCHES Clang OR CMAKE_CXX_COMPILER_ID STREQUAL GNU)

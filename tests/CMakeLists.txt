@@ -16,6 +16,11 @@ FetchContent_MakeAvailable(Catch2)
 
 target_link_libraries(robot-test PRIVATE Catch2::Catch2 options warnings)
 
+if(COVERAGE)
+  target_compile_options(robot-test INTERFACE --coverage)
+  target_link_options(robot-test INTERFACE --coverage)
+endif()
+
 list(APPEND CMAKE_MODULE_PATH "${catch2_SOURCE_DIR}/contrib")
 include(Catch)
 catch_discover_tests(robot-test)
