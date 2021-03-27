@@ -1,0 +1,26 @@
+name: Coverage
+
+on: [push]
+
+env:
+  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Configure
+      run: cmake -B build -DCMAKE_BUILD_TYPE=Debug -DCOVERAGE=ON
+
+    - name: Build
+      run: cmake --build build
+
+    - name: Test
+      run: |
+          cd build
+          ctest --output-on-failure
+
+    - name: Upload coverage report
+      run: bash <(curl -s https://codecov.io/bash)
