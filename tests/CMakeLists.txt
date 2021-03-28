@@ -1,5 +1,6 @@
 add_executable(robot-test
   main.cpp
+  "${PROJECT_SOURCE_DIR}/src/robot/hello.cpp"
   "${PROJECT_SOURCE_DIR}/src/robot/hello.test.cpp"
 )
 
@@ -14,6 +15,11 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 target_link_libraries(robot-test PRIVATE Catch2::Catch2 options warnings)
+
+# if(COVERAGE)
+#   target_compile_options(robot-test PRIVATE --coverage)
+#   target_link_options(robot-test PRIVATE --coverage)
+# endif()
 
 list(APPEND CMAKE_MODULE_PATH "${catch2_SOURCE_DIR}/contrib")
 include(Catch)
